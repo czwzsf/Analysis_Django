@@ -2,5 +2,5 @@ from django.urls import path, include
 from chart import views
 
 urlpatterns = [
-    path('bottom/', views.bottom, name="bottom_chart"),
+    path('bottom/bottomLeftChart/', views.bottomleftchart, name="bottom_chart"),
 ]

@@ -12,3 +12,9 @@ class bottomLeftChart(models.Model):
 
     class Meta:
         db_table = 'bottomLeftChart'
+
+
+class Product_last_month_12mis(models.Model):
+    product_line = models.CharField(max_length=255, verbose_name="产品名称")
+    mis_data = models.IntegerField(verbose_name="最近月")
+    mis_12 = models.DecimalField(max_length=24, verbose_name="12mis的值")
