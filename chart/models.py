@@ -30,3 +30,16 @@ class Product_last_month_12mis(models.Model):
 
     class Meta:
         db_table = 'Product_last_month_12mis'
+
+
+class Service_station_information(models.Model):
+    station_name = models.CharField(max_length=128, verbose_name="服务站名称")
+    claimfrequency = models.IntegerField(verbose_name="索赔频次")
+    date_month = models.DateTimeField(auto_now=False, auto_now_add=False, verbose_name="索赔年月")
+    type_car = models.CharField(max_length=16, verbose_name="车型")
+    engine_platform = models.CharField(max_length=64, verbose_name="发动机平台")
+    car_let = models.CharField(max_length=32, verbose_name="排放")
+    purpose = models.CharField(max_length=64, verbose_name="用途")
+
+    class Meta:
+        db_table = "Service_station_information"
