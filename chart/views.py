@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from chart.models import bottomLeftChart, Product_last_month_12mis, Product_id, Service_station_information
+from chart.models import bottomLeftChart, Product_last_month_12mis, Product_id, E6_platform_mis
 
 
 # Create your views here.
@@ -48,3 +48,13 @@ def bottomrightchart(request):
     return JsonResponse(cdata)
 
 
+def leftoneChart(request):
+    cdata = {
+        'data_mis': [],
+        'mis_12': [],
+    }
+    queryset = E6_platform_mis.objects.all()
+    for item in queryset:
+        cdata['data_mis'].append(item.data_mis)
+        cdata['mis_12'].append(item.mis_12)
+    return JsonResponse(cdata)
