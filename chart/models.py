@@ -90,7 +90,7 @@ class part_claim_mis(models.Model):
     date = models.CharField(max_length=128, verbose_name="日期")
     base_value = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="基础值")
     current_value = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="当前值")
-    chain_ration = models.CharField(max_length=32, verbose_name="环比")
+    chain_ratio = models.CharField(max_length=32, verbose_name="环比")
     year_on_year = models.CharField(max_length=32, verbose_name="同比")
 
     class Meta:
