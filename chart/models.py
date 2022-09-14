@@ -96,5 +96,47 @@ class part_claim_mis(models.Model):
     class Meta:
         db_table = "part_claim_mis"
 
+
 # TODO 未来要使用相关链接来显示，不需要单独创建一个数据库
-class
+class mis12_platform_6DM(models.Model):
+    platform = models.CharField(max_length=64, verbose_name="平台")
+    mis_12 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    date = models.CharField(max_length=128, verbose_name="日期")
+
+    class Meta:
+        db_table = "mis12_platform_6DM"
+
+
+class J6_Highway_Production_Month_12MIS(models.Model):
+    Number_of_samples = models.IntegerField(verbose_name="索赔数量")
+    date = models.DateTimeField(auto_now=False, auto_now_add=False, verbose_name="索赔日期")
+    mis0 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    mis1 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    mis2 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    mis3 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    mis4 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    mis5 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    mis6 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    mis7 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    mis8 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    mis9 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    mis10 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    mis11 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    mis12 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    Statistics_month = models.DateTimeField(auto_now=False, auto_now_add=False, verbose_name="统计日期")
+
+    class Meta:
+        db_table = "J6_Highway_Production_Month_12MIS"
+
+
+# todo 临时数据库，后期改善
+class Frequency_of_claims_by_car_type(models.Model):
+    date_of_claim = models.CharField(max_length=32, verbose_name="索赔日期")
+    frequency = models.IntegerField(verbose_name="索赔频次")
+    car_type = models.CharField(max_length=32, verbose_name="车型")
+    platform = models.CharField(max_length=64, verbose_name="平台")
+    let = models.CharField(max_length=32, verbose_name="排放")
+    purpose = models.CharField(max_length=32, verbose_name="用途")
+
+    class Meta:
+        db_table = "Frequency_of_claims_by_car_type"
