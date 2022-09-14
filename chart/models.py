@@ -6,6 +6,7 @@ from django.db import models
 # 数字化大屏数据来源
 
 class Product_id(models.Model):
+    # 产品id
     product_id = models.IntegerField(verbose_name="产品id")
     product_name = models.CharField(max_length=128, verbose_name="产品名称", blank=True, null=True)
 
@@ -23,6 +24,7 @@ class bottomLeftChart(models.Model):
 
 
 class Product_last_month_12mis(models.Model):
+    # 产品最近月12mis
     product_line = models.CharField(max_length=255, verbose_name="产品名称")
     mis_data = models.IntegerField(verbose_name="最近月")
     mis_12 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
@@ -33,6 +35,7 @@ class Product_last_month_12mis(models.Model):
 
 
 class Service_station_information(models.Model):
+    # 服务站索赔频次
     station_name = models.CharField(max_length=128, verbose_name="服务站名称")
     claimfrequency = models.IntegerField(verbose_name="索赔频次")
     date_month = models.DateTimeField(auto_now=False, auto_now_add=False, verbose_name="索赔年月")
@@ -46,6 +49,7 @@ class Service_station_information(models.Model):
 
 
 class platform_information(models.Model):
+    # 平台信息
     platform = models.CharField(max_length=128, verbose_name="平台")
 
     class Meta:
@@ -53,6 +57,7 @@ class platform_information(models.Model):
 
 
 class let_information(models.Model):
+    # 排放信息
     let = models.CharField(max_length=128, verbose_name="排放")
 
     class Meta:
@@ -65,6 +70,7 @@ class E6_platform_mis(models.Model):
     mis_9 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="9mis的值")
     mis_6 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="6mis的值")
     mis_3 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="3mis的值")
+    platform = models.CharField(max_length=64, verbose_name="平台", null=True, blank=True)
 
     class Meta:
         db_table = "E6_platform_mis"
@@ -74,7 +80,7 @@ class area_claim_frequency(models.Model):
     area = models.CharField(max_length=128, verbose_name="大区地址")
     frequency = models.IntegerField(verbose_name="索赔频次")
     ownership = models.IntegerField(verbose_name="地区拥有量")
-    failurae_rate = models.CharField(max_length=32, verbose_name="索赔率")
+    failure_rate = models.CharField(max_length=32, verbose_name="索赔率")
     Date_of_claim = models.DateTimeField(auto_now=False, auto_now_add=False, verbose_name="索赔年月")
     car_type = models.CharField(max_length=32, verbose_name="车型")
     platform = models.CharField(max_length=64, verbose_name="平台")
@@ -110,19 +116,19 @@ class mis12_platform_6DM(models.Model):
 class J6_Highway_Production_Month_12MIS(models.Model):
     Number_of_samples = models.IntegerField(verbose_name="索赔数量")
     date = models.DateTimeField(auto_now=False, auto_now_add=False, verbose_name="索赔日期")
-    mis0 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
-    mis1 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
-    mis2 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
-    mis3 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
-    mis4 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
-    mis5 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
-    mis6 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
-    mis7 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
-    mis8 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
-    mis9 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
-    mis10 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
-    mis11 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
-    mis12 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值")
+    mis0 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="0mis的值", null=True, blank=True)
+    mis1 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="1mis的值", null=True, blank=True)
+    mis2 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="2mis的值", null=True, blank=True)
+    mis3 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="3mis的值", null=True, blank=True)
+    mis4 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="4mis的值", null=True, blank=True)
+    mis5 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="5mis的值", null=True, blank=True)
+    mis6 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="6mis的值", null=True, blank=True)
+    mis7 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="7mis的值", null=True, blank=True)
+    mis8 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="8mis的值", null=True, blank=True)
+    mis9 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="9mis的值", null=True, blank=True)
+    mis10 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="10mis的值", null=True, blank=True)
+    mis11 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="11mis的值", null=True, blank=True)
+    mis12 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值", null=True, blank=True)
     Statistics_month = models.DateTimeField(auto_now=False, auto_now_add=False, verbose_name="统计日期")
 
     class Meta:
