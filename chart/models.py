@@ -130,6 +130,7 @@ class J6_Highway_Production_Month_12MIS(models.Model):
     mis11 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="11mis的值", null=True, blank=True)
     mis12 = models.DecimalField(decimal_places=1, max_digits=24, verbose_name="12mis的值", null=True, blank=True)
     Statistics_month = models.DateTimeField(auto_now=False, auto_now_add=False, verbose_name="统计日期")
+    date_s = models.CharField(max_length=32, verbose_name="生产月", null=True,blank=True)
 
     class Meta:
         db_table = "J6_Highway_Production_Month_12MIS"
